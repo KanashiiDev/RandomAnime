@@ -44,7 +44,7 @@ export default function Home() {
         Random Anime Generator
       </Heading>
       <Text textAlign='center' pb='10px'>
-        Complete the form below to generate a list or single anime
+        Complete the form below to generate random anime
       </Text>
       <Filter spin={false}> </Filter>
           </Container>
