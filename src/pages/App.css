@@ -1,0 +1,256 @@
+.main {
+  color: #d1d1d1;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-flow: column nowrap;
+  min-height: 100%;
+  background-color: #0a1625 ;
+}
+
+html {
+  height: 100%;
+  min-height: 100%;
+  background-color: #0a1625 !important;
+}
+
+body {
+  background-color: #050c14 !important;
+  padding: 0;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-width: 765px;
+  place-content: flex-end;
+}
+
+::-webkit-scrollbar {
+  background-color: #0a1625;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #1a2a3e;
+}
+
+.multiselect {
+  & #react-select-3-input,
+  & #react-select-5-input,
+  & #react-select-7-input,
+  & #react-select-9-input {
+    color: #b7b7b7 !important;
+    caret-color: #9898985a;
+  }
+  & .react-select-9-listbox {
+    z-index: 5;
+  }
+  & span {
+    background-color: #9898985a;
+  }
+  & > div:hover {
+    border-color: #9898989a;
+  }
+  & > div,
+  & > div:nth-child(4) > div:first-child > div {
+    background-color: #152232;
+    border-color: #9898985a;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  & > div:nth-child(4) > div:first-child > div:focus,
+  & > div:nth-child(4) > div:first-child > div:hover {
+    background-color: #0a1625;
+    cursor: pointer;
+  }
+  & > div:nth-child(3) > div:first-child > div:has(div) {
+    background-color: #0a1625;
+    & > div {
+      color: #d1d1d1;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+    }
+    & > div:last-child:hover {
+      background-color: #bc424288;
+    } 
+  }
+  & > div > div:first-child > div:first-child {
+    color: #d1d1d1;
+  }
+}
+div[role="slider"] {
+  z-index: 0;
+}
+ 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    height: 0px;
+  }
+  100% {
+    opacity: 1;
+    height: 280px;
+  }
+}
+ 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    height: 0px;
+  }
+  100% {
+    opacity: 1;
+    height: 280px;
+  }
+}
+
+.dropdown{
+  cursor: pointer;
+}
+ 
+.menu {
+  overflow: hidden;
+  max-height: 280px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.menu--open {
+  -webkit-animation: fadeIn 0.4s ease-in-out;
+          animation: fadeIn 0.4s ease-in-out;
+}
+.menu--close {
+  -webkit-animation: fadeIn .4s reverse ease-in-out;
+  animation: fadeIn .4s reverse ease-in-out;
+}
+.filter-mask{
+  background-color: #0a1320e7;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  width: 100%;
+} 
+.filter-bg{
+  background-image: url("https://i.pinimg.com/736x/39/29/f5/3929f5072915e985bf380fe0f3423b44.jpg");
+  max-width: 100% !important;
+  width: 100%;
+  margin: 0;
+}
+.wheel-mask{
+  background-color: rgba(10, 19, 32, 0.906);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  width: 100%;
+} 
+.wheel-mask::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(10, 19, 32, 0.906)));
+  background: linear-gradient(180deg, rgba(0,0,0,0), rgba(10, 19, 32, 0.906));
+}
+.wheel-bg{
+  background-image: url("https://i.pinimg.com/736x/39/29/f5/3929f5072915e985bf380fe0f3423b44.jpg");
+  max-width: 100% !important;
+  width: 100%;
+  margin: 0;
+}
+.rotate180{
+-webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+}
+.desc{
+  overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+}
+ .default{
+  background-color: #293749 !important;
+  color: #d1d1d1 !important;
+}
+
+.wheel-button{
+  background-color: #414f61 !important;
+  color: #d1d1d1 !important;
+}
+.banner,
+.wheel-button-edit{
+  background-color: #323b46 !important;
+  color: #d1d1d1 !important;
+}
+.wheel-button-next{
+  background-color: #4c5c72  !important;
+  color: #d1d1d1 !important;
+}
+.spin-filter-modal{
+  background-color: #1c2531 !important;
+  color: #d1d1d1 !important;
+}
+
+.dayAnimeBtn{
+  background-color: #3a3d40 !important;
+  color: #d1d1d1 !important;
+}
+button:hover{
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+.box-details{
+  min-height: 80px;
+  text-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: flex;
+  background-color: #313f4d !important;
+  color: #d1d1d1 !important;
+  border-radius: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  box-shadow: 0px 0px 5px #00000063;
+}
+.error{
+  color: #f68585;
+  border-radius:10px;
+   padding:10px;
+    background:#323b46;
+     font-weight:bold;
+}
+.tags{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+.tag{
+  display: -webkit-box;
+  display: flex;
+  background: #313f4d73;
+  border-radius: 10px;
+  padding: 5px 7px;
+  -webkit-box-pack: justify;
+          justify-content: space-between;}
+  .tag-name{
+    -webkit-transition: .3s ;
+    transition: .3s ;
+  }
+  .tag-name:hover{
+    color:#acc9ed
+  }
+  .tag-percent{
+    color:#acb4bd
+  }
