@@ -35,11 +35,10 @@ export default function Navbar() {
         </Link>
       </Box>
       <Box sx={box}>
-        <Link _hover={{ textDecoration: "none" }} onClick={() => handleClick("/about")}>
-          About
+        <Link _hover={{ textDecoration: "none" }} onClick={() => handleClick("/watchlist")}>
+          Watch List
         </Link>
       </Box>
-      {/*<Button className='default' ml="auto" mr="15px"  alignSelf="center">Support</Button>*/}
     </Flex>
   );
 }

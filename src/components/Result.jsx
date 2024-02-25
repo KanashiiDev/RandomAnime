@@ -1,12 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Heading, Button, Text, Box, Flex, SimpleGrid, Image } from "@chakra-ui/react";
 import MarkdownView from "react-showdown";
 import { SiAnilist, SiMyanimelist } from "react-icons/si";
+import { IoBookmark, IoBookmarkOutline } from "react-icons/io5";
 import { ytopts } from "../data/FuncOptions.js";
 import YouTube from "react-youtube";
 export default function Result(animedata2) {
+  const [bookmarked, setBookmarked] = useState(false);
   let animedata =
     animedata2.children && animedata2.children[0] ? animedata2.children[0] : animedata2.children ? animedata2.children : animedata2;
+  useEffect(() => {
+    check();
+  }, [animedata]);
+  async function save() {
+    let localStorageSave = JSON.parse(localStorage.getItem("RandAniS"));
+    if (localStorageSave && localStorageSave[0] && localStorageSave[0].name) {
+      if (!localStorageSave.some((item) => item.name === animedata.name)) {
+        localStorageSave.push(animedata);
+        localStorage.setItem("RandAniS", JSON.stringify(localStorageSave));
+      } else {
+        localStorageSave = localStorageSave.filter((item) => item.name !== animedata.name);
+        localStorage.setItem("RandAniS", JSON.stringify(localStorageSave));
+      }
+    } else {
+      localStorageSave = [animedata];
+      localStorage.setItem("RandAniS", JSON.stringify(localStorageSave));
+    }
+  }
+  async function check() {
+    let localStorageSave = JSON.parse(localStorage.getItem("RandAniS"));
+    if (localStorageSave &&  localStorageSave[0] && localStorageSave[0].name) {
+      if (localStorageSave.some((item) => item.name === animedata.name)) {
+        setBookmarked(true);
+      } else {
+        setBookmarked(false);
+      }
+    }
+  }
   if (animedata.name) {
     return (
       <div>
@@ -30,6 +60,22 @@ export default function Result(animedata2) {
             w={animedata.bannerImage ? "100%" : "0px"}></Image>
         </Container>
         <Flex gap='20px' mt='-130px' ml='15px' className='Image' textAlign='center' w='95%'>
+          <Button
+            _hover={{ background: "none" }}
+            pos='absolute'
+            background='none'
+            maxW='10px'
+            maxH='10px'
+            margin='0'
+            padding='0'
+            color='#dadada'
+            right='24px'
+            onClick={async () => {
+              await save();
+              await check();
+            }}>
+            {bookmarked ? <IoBookmark /> : <IoBookmarkOutline />}
+          </Button>
           <Image h='120px' w='80px' borderRadius='10px' src={animedata.image}></Image>
           <Flex flexDir='column' textAlign='start'>
             <Heading color='#e6e6e6' fontSize='1.3rem' as='header' mt='5px'>

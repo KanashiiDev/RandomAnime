@@ -26,16 +26,16 @@ export default function AnimeDay() {
     try {
       let response = await fetch("/dailyUpdateResult.json");
       let result = await response.json();
-      let Array = [];
+      let Array = [{}];
       await arrfix();
       async function arrfix() {
-        Array.name = result.title.romaji;
-        Array.nameEng = result.title.english;
-        Array.image = result.coverImage.large;
-        Array.bannerImage = result.bannerImage;
-        Array.format = result.format;
-        Array.genres = result.genres ? result.genres.toString().split(",").join(", ") : " ";
-        Array.tags = result.tags
+        Array[0].name = result.title.romaji;
+        Array[0].nameEng = result.title.english;
+        Array[0].image = result.coverImage.large;
+        Array[0].bannerImage = result.bannerImage;
+        Array[0].format = result.format;
+        Array[0].genres = result.genres ? result.genres.toString().split(",").join(", ") : " ";
+        Array[0].tags = result.tags
           ? result.tags
               .filter((item) => item.isMediaSpoiler === false)
               .map(
@@ -53,16 +53,16 @@ export default function AnimeDay() {
               .split(",")
               .join("")
           : " ";
-        Array.desc = result.description;
-        Array.siteUrl = result.siteUrl;
-        Array.idMal = result.idMal;
-        Array.trailer = result.trailer;
-        Array.averageScore = result.averageScore;
-        Array.duration = result.duration;
-        Array.source = result.source !== null ? result.source.replace(/_/g, " ") : " ";
-        Array.startDate = result.startDate;
-        Array.episodes = result.episodes;
-        Array.studios = result.studios.nodes
+        Array[0].desc = result.description;
+        Array[0].siteUrl = result.siteUrl;
+        Array[0].idMal = result.idMal;
+        Array[0].trailer = result.trailer;
+        Array[0].averageScore = result.averageScore;
+        Array[0].duration = result.duration;
+        Array[0].source = result.source !== null ? result.source.replace(/_/g, " ") : " ";
+        Array[0].startDate = result.startDate;
+        Array[0].episodes = result.episodes;
+        Array[0].studios = result.studios.nodes
           ? result.studios.nodes
               .map((node) => node.name)
               .toString()
@@ -80,7 +80,7 @@ export default function AnimeDay() {
       justifyContent='center'
       bgRepeat='no-repeat'
       bgSize='cover'
-      backgroundImage={animedata && animedata.bannerImage ? animedata.bannerImage : ""}
+      backgroundImage={animedata && animedata[0].bannerImage ? animedata[0].bannerImage : ""}
       height='420px'
       w='100%'
       minW='650px'>
@@ -93,10 +93,10 @@ export default function AnimeDay() {
 
         <Flex direction='column' w='84%'>
           <Heading h='30px' w='100%' color='#e3e3e3' size='mm' p='10px'>
-            {animedata && animedata.name ? animedata.name : ""}
+            {animedata && animedata[0].name ? animedata[0].name : ""}
           </Heading>
           <Box color='#dadada' p='10px' height='60px' className='desc'>
-            {<MarkdownView markdown={animedata && animedata.desc ? animedata.desc : ""} />}
+            {<MarkdownView markdown={animedata && animedata[0].desc ? animedata[0].desc : ""} />}
           </Box>
         </Flex>
         <Button className='dayAnimeBtn' mb='10px' mt='auto' mx='10px' onClick={onOpen}>
@@ -111,7 +111,7 @@ export default function AnimeDay() {
           <ModalBody>
             <Result
               animedata2={async () => {
-                await animedata;
+                await {animedata};
               }}>
               {animedata}
             </Result>

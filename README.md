@@ -10,6 +10,8 @@ Choose what genres you like, or don't like, and only those anime will appear.<br
 You can also filter by episode, score and year.<br><br>
 <b>Spin Wheel</b><br>
 Filter Anime and spin the wheel for random anime!<br>
+<b>Watch List</b><br>
+If you see something you might want to check out later, save it to a watch list and come back when you’re ready.<br>
 <h1>Setup</h1>
 1 - Open "config.json" and fill required values.<br>
 2 - Open a command prompt and do the following command in the project directory: <br>

@@ -4,9 +4,9 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
 import Spinwheel from "./pages/spinwheel";
-import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import "./pages/App.css";
+import Watchlist from "./pages/Watchlist";
 
 // router and routes
 const router = createBrowserRouter(
@@ -14,7 +14,7 @@ const router = createBrowserRouter(
     <Route path='/' element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path='spinwheel' element={<Spinwheel />} />
-      <Route path='about' element={<About />} />
+      <Route path='watchlist' element={<Watchlist />} />
       <Route path='*' element={<NotFound />} />
     </Route>
   )

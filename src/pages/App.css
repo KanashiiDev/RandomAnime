@@ -201,6 +201,11 @@ display: -webkit-box;
   background-color: #3a3d40 !important;
   color: #d1d1d1 !important;
 }
+.watchlistBtn{
+  background-color: #414f61 !important;
+  color: #d1d1d1 !important;
+}
+
 button:hover{
   -webkit-transform: scale(1.04);
           transform: scale(1.04);
