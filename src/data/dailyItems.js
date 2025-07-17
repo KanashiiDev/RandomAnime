@@ -238,7 +238,7 @@ export const ArrayDef = [
     genres: " ",
     tags: " ",
     studios: " ",
-    desc: " ",
+    description: " ",
     trailer: " ",
     averageScore: " ",
     duration: " ",

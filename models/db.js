@@ -13,7 +13,7 @@ const _default = model(
     genres: String,
     tags: String,
     studios: String,
-    desc: String,
+    description: String,
     trailer: String,
     averageScore: Number,
     duration: Number,

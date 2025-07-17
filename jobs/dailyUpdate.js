@@ -2,7 +2,7 @@ import model from "../models/db.js";
 import mongoose from "mongoose";
 import { media, query } from "../src/data/dailyItems.js";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client/core/core.cjs";
-import { tagFix } from "../src/data/FuncOptions.js";
+import { formatTag } from "../src/data/FuncOptions.js";
 import * as fs from "node:fs";
  
 async function dailyUpdate() {
@@ -71,9 +71,9 @@ async function dailyUpdate() {
                 .map(
                   (node) =>
                     "<div class='tag'><a href='https://anilist.co/search/anime?genres=" +
-                    tagFix(node.name, "url") +
+                    formatTag(node.name, "url") +
                     "'><div class='tag-name'>" +
-                    tagFix(node.name, "str") +
+                    formatTag(node.name, "str") +
                     "</div></a>" +
                     "<div class='tag-percent'> (" +
                     node.rank +
@@ -90,7 +90,7 @@ async function dailyUpdate() {
                 .split(",")
                 .join(", ")
             : " ",
-          desc: apiresponse.description ? apiresponse.description : " ",
+          description: apiresponse.description ? apiresponse.description : " ",
           trailer: apiresponse.trailer && apiresponse.trailer.id ? apiresponse.trailer.id : " ",
           averageScore: apiresponse.averageScore ? apiresponse.averageScore : " ",
           duration: apiresponse.duration ? apiresponse.duration : " ",
@@ -112,7 +112,7 @@ async function dailyUpdate() {
       genres: " ",
       tags: " ",
       studios: " ",
-      desc: " ",
+      description: " ",
       trailer: " ",
       averageScore: 0,
       duration: 0,

@@ -1,35 +1,23 @@
-import {
-  Container,
-  Heading,
-  Button,
-  Text,
-  Flex,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-} from "@chakra-ui/react";
-import Filter from "../components/filter";
-import { React, useState, useEffect } from "react";
+import { Heading, Box, Button, Text, Flex, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure, Spinner } from "@chakra-ui/react";
+import Filter from "../components/Filter";
+import { useState, useEffect } from "react";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { Wheel } from "spin-wheel";
-import { animedataDefault, props } from "../data/spinWheelItems.js";
-import { randomizeNumber, truncate, QuerydefaultOptions, randomizeDiffNumbers, tagFix } from "../data/FuncOptions.js";
+import { WHEEL_PROPERTIES as BASE_WHEEL_PROPERTIES } from "../data/spinWheelItems.js";
+import { DEFAULT_ANIME_DATA as BASE_ANIME_DATA } from "../data/spinWheelItems.js";
+import { getRandomNumber, truncateText, DEFAULT_QUERY_OPTIONS, getUniqueRandomNumbers, formatTag, loadImage, cloneWheelPropsPreservingImages } from "../data/FuncOptions.js";
 import Result from "./Result.jsx";
 
-let animedata = animedataDefault;
-let apiresponse;
-let currentpage = 1;
+let animeData = JSON.parse(JSON.stringify(BASE_ANIME_DATA));
+let apiResponse;
+let currentPage = 1;
 let randList = [];
-// API QUERY Options
+let wheelStatus = 0;
+let wheel;
 let localStorageData;
 
 //Api Query
-async function apireq() {
+async function apiRequest() {
   localStorageData = JSON.parse(localStorage.getItem("RandAniF"));
   if (localStorageData) {
     let g = localStorageData[0].genres == "" ? "" : "$genre: [String]";
@@ -43,7 +31,7 @@ async function apireq() {
     const apolloClient = new ApolloClient({
       uri: "https://graphql.anilist.co",
       cache: new InMemoryCache(),
-      defaultOptions: QuerydefaultOptions,
+      defaultOptions: DEFAULT_QUERY_OPTIONS,
     });
     //async () => apolloClient.resetStore();
     const GET_ANIME_PAGE = gql`
@@ -125,7 +113,7 @@ async function apireq() {
       const response = await apolloClient.query({
         query: GET_ANIME_PAGE,
         variables: {
-          page: currentpage,
+          page: currentPage,
           genre: localStorageData[0].genres,
           exGenre: localStorageData[0].excludedGenres,
           tag: localStorageData[0].tags,
@@ -140,11 +128,11 @@ async function apireq() {
       });
       if (!response || !response.data) throw new Error("Cannot get anime list!");
 
-      apiresponse = await response.data.Page;
-      if (apiresponse.media.length > 0) {
-        document.querySelector(".wheel-button-next").style.display = apiresponse && apiresponse.pageInfo.hasNextPage ? "block" : "none";
-        document.querySelector(".wheel-button-edit").style.width = apiresponse && apiresponse.pageInfo.hasNextPage ? "49%" : "100%";
-        randList = await randomizeDiffNumbers(await apiresponse.media.length, 21);
+      apiResponse = await response.data.Page;
+      if (apiResponse.media.length > 0) {
+        document.querySelector(".wheel-button-next").style.display = apiResponse && apiResponse.pageInfo.hasNextPage ? "block" : "none";
+        document.querySelector(".wheel-button-edit").style.width = apiResponse && apiResponse.pageInfo.hasNextPage ? "49%" : "100%";
+        randList = await getUniqueRandomNumbers(await apiResponse.media.length, 21);
       }
     } catch (err) {
       document.querySelector(".wheel-alert").innerHTML = "Not Found";
@@ -155,13 +143,13 @@ async function apireq() {
 }
 
 //Load Spin Wheel
-async function loadw() {
-  if (once == 1) {
-    if (w) {
-      animedata = animedataDefault;
-      await apireq();
-      let prop = props;
-      if (!apiresponse || apiresponse.media.length === 0) {
+async function loadWheel() {
+  if (wheelStatus == 1) {
+    if (wheel) {
+      animeData = JSON.parse(JSON.stringify(BASE_ANIME_DATA));
+      await apiRequest();
+      let prop = cloneWheelPropsPreservingImages(BASE_WHEEL_PROPERTIES);
+      if (!apiResponse || apiResponse.media.length === 0) {
         document.querySelector(".wheel-alert").innerHTML = "Not Found";
         document.querySelector(".wheel-alert").classList.add("error");
         return;
@@ -169,49 +157,42 @@ async function loadw() {
         document.querySelector(".wheel-alert").innerHTML = "";
         document.querySelector(".wheel-alert").classList.remove("error");
       }
-      if (apiresponse.media.length < 21) {
-        prop.items = prop.items.slice(0, apiresponse.media.length);
-      }
+      const itemCount = Math.min(21, apiResponse.media.length);
+      prop.items = prop.items.slice(0, itemCount);
+      animeData = animeData.slice(0, itemCount);
+      randList = await getUniqueRandomNumbers(apiResponse.media.length, itemCount);
       let apires;
-      for (let i = 0; i < prop.items.length; i++) {
-        apires = apiresponse.media[randList[i]];
-        prop.items[i].label = truncate(apires.title.romaji, 25);
-        prop.items[i].image = apires.coverImage.large;
-        animedata[i].name = apires.title.romaji;
-        animedata[i].nameEng = apires.title.english;
-        animedata[i].format = apires.format;
-        animedata[i].image = apires.coverImage.large;
-        animedata[i].bannerImage = apires.bannerImage;
-        animedata[i].genres = apires.genres ? apires.genres.toString().split(",").join(", ") : " ";
-        animedata[i].tags = apires.tags
+
+      for (let i = 0; i < itemCount; i++) {
+        apires = apiResponse.media[randList[i]];
+        prop.items[i].label = truncateText(apires.title.romaji, 25);
+        const img = await loadImage(apires.coverImage.large);
+        prop.items[i].image = img;
+        animeData[i].name = apires.title.romaji;
+        animeData[i].nameEng = apires.title.english;
+        animeData[i].format = apires.format;
+        animeData[i].image = apires.coverImage.large;
+        animeData[i].bannerImage = apires.bannerImage;
+        animeData[i].genres = apires.genres ? apires.genres.toString().split(",").join(", ") : " ";
+        (animeData[i].tags = apires.tags
           ? apires.tags
-              .filter((item) => item.isMediaSpoiler === false)
-              .map(
-                (node) =>
-                  "<div class='tag'><a href='https://anilist.co/search/anime?genres=" +
-                  tagFix(node.name, "url") +
-                  "'><div class='tag-name'>" +
-                  tagFix(node.name, "str") +
-                  "</div></a>" +
-                  "<div class='tag-percent'> (" +
-                  node.rank +
-                  "%)</div></div>"
-              )
-              .toString()
-              .split(",")
-              .join("")
-          : " ";
-        animedata[i].desc = apires.description;
-        animedata[i].siteUrl = apires.siteUrl;
-        animedata[i].idMal = apires.idMal;
-        animedata[i].trailer = apires.trailer;
-        animedata[i].averageScore = apires.averageScore;
-        animedata[i].duration = apires.duration;
-        animedata[i].source = apires.source !== null ? apires.source.replace(/_/g, " ") : " ";
-        animedata[i].startDate = apires.startDate;
-        animedata[i].episodes = apires.episodes;
-        animedata[i].source = animedata[i].source;
-        animedata[i].studios = apires.studios.nodes
+              .filter((tag) => !tag.isMediaSpoiler)
+              .map((tag) => ({
+                name: tag.name,
+                rank: tag.rank,
+              }))
+          : []),
+          (animeData[i].desc = apires.description);
+        animeData[i].siteUrl = apires.siteUrl;
+        animeData[i].idMal = apires.idMal;
+        animeData[i].trailer = apires.trailer;
+        animeData[i].averageScore = apires.averageScore;
+        animeData[i].duration = apires.duration;
+        animeData[i].source = apires.source !== null ? apires.source.replace(/_/g, " ") : " ";
+        animeData[i].startDate = apires.startDate;
+        animeData[i].episodes = apires.episodes;
+        animeData[i].source = animeData[i].source;
+        animeData[i].studios = apires.studios.nodes
           ? apires.studios.nodes
               .map((node) => node.name)
               .toString()
@@ -219,152 +200,150 @@ async function loadw() {
               .join(", ")
           : " ";
       }
-      w.init(prop);
-      w.isInteractive = false;
+      wheel.init(prop);
+      wheel.isInteractive = false;
       return;
     }
     const wheeldiv = document.querySelector(".wheel-wrapper");
-    for (let i = 0; i < props.items.length; i++) {
-      props.items[i].label = truncate(props.items[i].label, 25);
+    const initialProp = cloneWheelPropsPreservingImages(BASE_WHEEL_PROPERTIES);
+
+    for (let i = 0; i < initialProp.items.length; i++) {
+      initialProp.items[i].label = truncateText(initialProp.items[i].label, 25);
+      initialProp.items[i].image = await loadImage(initialProp.items[i].image);
     }
-
-    w = new Wheel(wheeldiv, props);
-    w.isInteractive = false;
+    wheel = new Wheel(wheeldiv, initialProp);
+    wheel.isInteractive = false;
   }
-  once++;
+  wheelStatus++;
 }
-
-//Spin Wheel Props
-let once = 0;
-let w;
 
 //Main
 export default function SpinWheel() {
   const [SpinWinner, setSpinWinner] = useState(0);
-  const [spinDisabled, setspinDisabled] = useState(false);
+  const [isSpinning, setisSpinning] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isOpen: isOpen2, onOpen: onOpen2, onClose: onClose2 } = useDisclosure();
 
   //Load Spin Wheel on Start
   useEffect(() => {
-    w = null;
-    once = 0;
+    wheel = null;
+    wheelStatus = 0;
     setTimeout(() => {
-      loadw();
+      loadWheel();
     }, 50);
   }, []);
   useEffect(() => {
-    if (w && spinDisabled) {
-      w.spinToItem(SpinWinner, 4000, false, 3);
+    if (wheel && isSpinning) {
+      wheel.spinToItem(SpinWinner, 4000, false, 3);
     }
   }, [SpinWinner]);
 
   return (
-    <Container zIndex='1' className='main filter' p='20px' borderRadius='10px' background='none'>
+    <Box zIndex='1' className='main filter' p='20px' borderRadius='10px' background='none' justifyContent='center' maxW='65%' maxH='65%' margin='auto'>
       <Heading p='5px' textAlign='center'>
         Random Spin Wheel
       </Heading>
       <Text textAlign='center' pb='10px'>
         Spin for Random Anime!
       </Text>
-      <Container
-        display='flex'
-        justifyContent='center'
-        alignContent='center'
-        my='10px'
-        p='20px'
-        pt='0px'
-        borderRadius='10px'
-        className='wheel-wrapper'
-        ml='-60px'
-        maxH='600px'
-        h='580px'
-        minW='600px'
-        w='600px'></Container>
-      <Text className='wheel-alert' mt='363px' ml='190px' position='absolute'></Text>
-      <Button
-        isDisabled={spinDisabled}
-        className='wheel-button'
-        onClick={async () => {
-          setspinDisabled(true);
-          setSpinWinner(randomizeNumber(animedata.length));
-          setTimeout(() => {
-            setspinDisabled(false);
-            onOpen2();
-          }, 4000);
-        }}>
-        Spin
-      </Button>
-      <Flex justifyContent='space-between'>
+      <Box className='wheel-wrapper'></Box>
+      <Text className='wheel-alert' left='46.5%' position='absolute'></Text>
+      <Flex flexDirection={"column"} justifyContent={"center"} margin={"10px auto"} width={"50%"}>
         <Button
-          isDisabled={spinDisabled}
-          mt='10px'
-          w='100%'
-          className='wheel-button-edit'
-          onClick={() => {
-            onOpen(),
-              setTimeout(() => {
-                let sub = document.querySelector(".submit");
-                if (sub) {
-                  sub.addEventListener("click", function () {
-                    onClose();
-                    once = 1;
-                    currentpage = 1;
-                    loadw();
-                  });
+          isDisabled={isSpinning || isLoading}
+          className='wheel-button'
+          onClick={async () => {
+            setisSpinning(true);
+            setSpinWinner(getRandomNumber(animeData.length));
+            setTimeout(() => {
+              setisSpinning(false);
+              onOpen2();
+            }, 4000);
+          }}>
+          {isLoading ? <Spinner size='sm' color='white' /> : "Spin"}
+        </Button>
+        <Flex justifyContent='space-between'>
+          <Button
+            isDisabled={isSpinning || isLoading}
+            mt='10px'
+            w='100%'
+            className='wheel-button-edit'
+            onClick={() => {
+              onOpen();
+
+              const checkAndBindSubmit = () => {
+                const submitButton = document.querySelector(".submit");
+
+                if (!submitButton) {
+                  setTimeout(checkAndBindSubmit, 100);
+                  return;
                 }
-                clearTimeout();
-              }, 1000);
-          }}>
-          Edit
-        </Button>
-        <Button
-          w='49%'
-          background='#6b83a1'
-          display={apiresponse && apiresponse.pageInfo.hasNextPage ? "block" : "none"}
-          isDisabled={spinDisabled}
-          mt='10px'
-          className='wheel-button-next'
-          onClick={() => {
-            once = 1;
-            currentpage += 1;
-            loadw();
-          }}>
-          Next
-        </Button>
+
+                submitButton.replaceWith(submitButton.cloneNode(true));
+                const newButton = document.querySelector(".submit");
+
+                newButton.addEventListener("click", async function () {
+                  const current = JSON.stringify(JSON.parse(localStorage.getItem("RandAniF")));
+                  const latest = JSON.stringify(localStorageData);
+
+                  if (current !== latest) {
+                    newButton.disabled = true;
+                    newButton.textContent = "Loading...";
+
+                    setIsLoading(true);
+                    wheelStatus = 1;
+                    currentPage = 1;
+                    await loadWheel();
+                    setIsLoading(false);
+
+                    onClose();
+                  }
+                });
+              };
+
+              checkAndBindSubmit();
+            }}>
+            {isLoading ? <Spinner size='sm' color='white' /> : "Edit"}
+          </Button>
+          <Button
+            w='49%'
+            background='#6b83a1'
+            display={apiResponse && apiResponse.pageInfo.hasNextPage ? "block" : "none"}
+            isDisabled={isSpinning || isLoading}
+            mt='10px'
+            className='wheel-button-next'
+            onClick={async () => {
+              setIsLoading(true);
+              wheelStatus = 1;
+              currentPage += 1;
+              await loadWheel();
+              setIsLoading(false);
+            }}>
+            {isLoading ? <Spinner size='sm' color='white' /> : "Next"}
+          </Button>
+        </Flex>
       </Flex>
       <Modal isOpen={isOpen2} onClose={onClose2}>
         <ModalOverlay />
-        <ModalContent className='spin-filter-modal' maxW='550px'>
+        <ModalContent className='result-modal'>
           <ModalHeader></ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Result
-              animedata2={async () => {
-                await animedata[SpinWinner];
-              }}>
-              {animedata[SpinWinner]}
-            </Result>
+            <Result animeData={animeData[SpinWinner]}>{animeData[SpinWinner]}</Result>
           </ModalBody>
-          <ModalFooter></ModalFooter>
         </ModalContent>
       </Modal>
-      <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
+      <Modal closeOnOverlayClick={true} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent className='spin-filter-modal' maxW='550px'>
+        <ModalContent className='result-modal'>
           <ModalHeader>Edit Spin Wheel</ModalHeader>
-          <ModalCloseButton
-            onClick={() => {
-              once = 1;
-              loadw();
-            }}
-          />
+          <ModalCloseButton />
           <ModalBody>
-            <Filter spin={true}> </Filter>
+            <Filter spinMode={true}> </Filter>
           </ModalBody>
-          <ModalFooter></ModalFooter>
         </ModalContent>
       </Modal>
-    </Container>
+    </Box>
   );
 }

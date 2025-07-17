@@ -53,7 +53,7 @@ const WatchList = ({ animeList }) => {
       ))}
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent className='spin-filter-modal' maxW='550px'>
+        <ModalContent className='result-modal'>
           <ModalHeader></ModalHeader>
           <ModalCloseButton />
           <ModalBody>
@@ -66,7 +66,6 @@ const WatchList = ({ animeList }) => {
               {animeList[val]}
             </Result>
           </ModalBody>
-          <ModalFooter></ModalFooter>
         </ModalContent>
       </Modal>
     </Grid>

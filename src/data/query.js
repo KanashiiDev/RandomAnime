@@ -24,13 +24,13 @@ export async function cfg(g,g2,exg,exg2,tg,tg2,extg,extg2,currentpage){
 
 
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import { QuerydefaultOptions  } from "../data/FuncOptions.js";
+import { DEFAULT_QUERY_OPTIONS  } from "../data/FuncOptions.js";
 
 
 export var apolloClient = new ApolloClient({
     uri: "https://graphql.anilist.co",
     cache: new InMemoryCache(),
-    defaultOptions: QuerydefaultOptions,
+    defaultOptions: DEFAULT_QUERY_OPTIONS,
   });
   await cfg();
   //async () => apolloClient.resetStore();

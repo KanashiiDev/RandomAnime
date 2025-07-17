@@ -1,5 +1,5 @@
 //Default SpinWheel Items
-export const animedataDefault = [
+export const DEFAULT_ANIME_DATA = [
   {
     name: "Natsume Yuujinchou",
     nameEng: "Natsume's Book of Friends",
@@ -8,7 +8,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx4081-33BLrdaPdZjP.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/4081-dbeE4uMExtgc.jpg",
     genres: "Drama, Fantasy, Slice of Life, Supernatural",
-    desc: "Natsume has always been an outcast because he inherited his grandmother's ability to see yokai. After moving to his grandmother's hometown and accidentally releasing a yokai imprisoned in a Lucky Cat statue, he learns about his grandmother's \"Book of Friends,\" which contains the names of the yokai she defeated, and allows its wielder to command the yokai named within. Since then, yokai now visit him on a daily basis, seeking to either get their names back or take possession of the Book of Friends.<br><br>\n(Source: NIS America)",
+    description: "Natsume has always been an outcast because he inherited his grandmother's ability to see yokai. After moving to his grandmother's hometown and accidentally releasing a yokai imprisoned in a Lucky Cat statue, he learns about his grandmother's \"Book of Friends,\" which contains the names of the yokai she defeated, and allows its wielder to command the yokai named within. Since then, yokai now visit him on a daily basis, seeking to either get their names back or take possession of the Book of Friends.<br><br>\n(Source: NIS America)",
     trailer: null,
     averageScore: 80,
     duration: 24,
@@ -30,7 +30,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx13125-NdLjbmyHmoAD.png",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/13125.jpg",
     genres: "Drama, Horror, Mystery, Psychological, Sci-Fi, Supernatural",
-    desc: "Following a sudden outbreak of psychokinesis in 0.1% of the population, a rapid transformation swept the world. The godlike ability to manipulate matter remotely turned many power wielders to violence, inciting a long period of upheaval. Finally, after a chaotic era shaped by the rise and fall of oppressive regimes, the psychic humans were able to achieve a fragile peace by isolating their society, creating a new world bound by complex rules.\n<br><br>\nIn the town of Kamisu 66, 12-year-old Saki Watanabe has just awakened to her powers and is relieved to rejoin her friends—the mischievous Satoru Asahina, the shy Mamoru Itou, the cheerful Maria Akizuki, and Shun Aonuma, a mysterious boy whom Saki admires—at Sage Academy, a special school for psychics. However, unease looms as Saki begins to question the fate of those unable to awaken to their powers, and the children begin to get involved with secretive matters such as the rumored Tainted Cats said to abduct children.\n<br><br>\n<i>Shinsekai yori</i> tells the unique coming-of-age story of Saki and her friends as they journey to grow into their roles in the supposed utopia. Accepting these roles, however, might not come easy when faced with the dark and shocking truths of society, and the impending havoc born from the new world.\n<br><br>\n(Source: MAL Rewrite)",
+    descriptionription: "Following a sudden outbreak of psychokinesis in 0.1% of the population, a rapid transformation swept the world. The godlike ability to manipulate matter remotely turned many power wielders to violence, inciting a long period of upheaval. Finally, after a chaotic era shaped by the rise and fall of oppressive regimes, the psychic humans were able to achieve a fragile peace by isolating their society, creating a new world bound by complex rules.\n<br><br>\nIn the town of Kamisu 66, 12-year-old Saki Watanabe has just awakened to her powers and is relieved to rejoin her friends—the mischievous Satoru Asahina, the shy Mamoru Itou, the cheerful Maria Akizuki, and Shun Aonuma, a mysterious boy whom Saki admires—at Sage Academy, a special school for psychics. However, unease looms as Saki begins to question the fate of those unable to awaken to their powers, and the children begin to get involved with secretive matters such as the rumored Tainted Cats said to abduct children.\n<br><br>\n<i>Shinsekai yori</i> tells the unique coming-of-age story of Saki and her friends as they journey to grow into their roles in the supposed utopia. Accepting these roles, however, might not come easy when faced with the dark and shocking truths of society, and the impending havoc born from the new world.\n<br><br>\n(Source: MAL Rewrite)",
     trailer: {
       site: "youtube",
       id: "WtWiMTDhCUo",
@@ -56,7 +56,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx148970-8B5Bvs6axxfU.png",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/148970-m7zWb5ywBsEd.jpg",
     genres: "Action, Drama, Sci-Fi",
-    desc: "The sequel to <i>Legend of the Galactic Heroes: Die Neue These - Collision</i>.\n<br><br>\n<i>Note: It received a limited special screening in theaters with the episodes spliced together into 3 separate movies.</i>",
+    description: "The sequel to <i>Legend of the Galactic Heroes: Die Neue These - Collision</i>.\n<br><br>\n<i>Note: It received a limited special screening in theaters with the episodes spliced together into 3 separate movies.</i>",
     trailer: {
       site: "youtube",
       id: "iGsIdoHDnnU",
@@ -82,7 +82,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97642-zQQJl4hv4Prx.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/97642-9NEjVO4JLd2e.jpg",
     genres: "Comedy, Drama, Fantasy",
-    desc: "One day, “The Junior”, estranged son of Professor Akadama, who disappeared after losing a fierce father-son dispute, has returned home after a century, now an English gentleman.\nThe big news spread in and out of the Kyoto area in the blink of an eye and shake up both the Tengu and Tanuki worlds.\nThe paths of Humans, Tanukis and Tengus intertwine in Kyoto as the second volume of the furball picture scroll unravels!",
+    description: "One day, “The Junior”, estranged son of Professor Akadama, who disappeared after losing a fierce father-son dispute, has returned home after a century, now an English gentleman.\nThe big news spread in and out of the Kyoto area in the blink of an eye and shake up both the Tengu and Tanuki worlds.\nThe paths of Humans, Tanukis and Tengus intertwine in Kyoto as the second volume of the furball picture scroll unravels!",
     trailer: {
       site: "youtube",
       id: "LU5KaJhxtsc",
@@ -108,7 +108,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100077-B4bfXz0wVOPO.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/100077-XKMTrxaMGhBj.jpg",
     genres: "Comedy, Sci-Fi, Slice of Life, Supernatural",
-    desc: "The comedy manga centers around a super-powered girl named Hina and Nitta, a young member of the yakuza. Hina suddenly appears in Nitta's room and threatens him with her extraordinary powers. However, they end up living together.<br><br>\n\n(Source: Anime News Network)",
+    description: "The comedy manga centers around a super-powered girl named Hina and Nitta, a young member of the yakuza. Hina suddenly appears in Nitta's room and threatens him with her extraordinary powers. However, they end up living together.<br><br>\n\n(Source: Anime News Network)",
     trailer: {
       site: "youtube",
       id: "1oTxGJcx04Q",
@@ -134,7 +134,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx153841-SjRoSMof4nHS.png",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/153841-oLMc4xPtNDYp.jpg",
     genres: "Drama, Slice of Life, Sports",
-    desc: "The second season of <i>Tsurune</i>.<br>\n<br>\nMinato’s return to archery may have helped Kazemai High’s Kyudo Club win a prefectural tournament, but it’s a poor bowman who expects an arrow to fly the same flight every time. With the entry of a radical new team, one of whose members is Minato’s former upperclassman, the old rivalry between Kazemai and Kirisaki becomes a triangle with the upstart team from Tsujimine as serious contenders. And even as the men’s team struggles to adjust to the new paradigm, competition doubles again as the Kazemai women’s team of Rika, Yuna, and Noa prepares to enter their first tourney as well! Prepare to be aquiver as each new arrow makes its mark in TSURUNE - THE LINKING SHOT!",
+    description: "The second season of <i>Tsurune</i>.<br>\n<br>\nMinato’s return to archery may have helped Kazemai High’s Kyudo Club win a prefectural tournament, but it’s a poor bowman who expects an arrow to fly the same flight every time. With the entry of a radical new team, one of whose members is Minato’s former upperclassman, the old rivalry between Kazemai and Kirisaki becomes a triangle with the upstart team from Tsujimine as serious contenders. And even as the men’s team struggles to adjust to the new paradigm, competition doubles again as the Kazemai women’s team of Rika, Yuna, and Noa prepares to enter their first tourney as well! Prepare to be aquiver as each new arrow makes its mark in TSURUNE - THE LINKING SHOT!",
     trailer: {
       site: "youtube",
       id: "VA2G3VQLWMk",
@@ -160,7 +160,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141774-iteNFzPq2oGw.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/141774-9fkNcIakgDUD.jpg",
     genres: "Comedy, Drama, Music, Supernatural",
-    desc: "Fate and reincarnation deliver brilliant military strategist, Kongming, from warring, ancient China to Japan’s modern party hot spot in Shibuya City, Tokyo. After a lifetime of battles and military skirmishes, Kongming wished with his last breath to be reborn in a world of peace and prosperity. It’s nearly two millennia later and he’s finding his way in a very different world than that of his past life. When he meets Eiko, an amateur musician with big dreams, the unlikely duo strikes up an even unlikelier friendship. Eiko has street smarts to help Kongming navigate this strange new world, and Kongming will use his strategic mind to help Eiko achieve stardom!\n<br><br>\n(Source: Sentai Filmworks)\n<br><br>\n<i>An advanced online screening of the first episode was held on March 31, 2022, but the weekly TV release began on April 5, 2022.</i>",
+    description: "Fate and reincarnation deliver brilliant military strategist, Kongming, from warring, ancient China to Japan’s modern party hot spot in Shibuya City, Tokyo. After a lifetime of battles and military skirmishes, Kongming wished with his last breath to be reborn in a world of peace and prosperity. It’s nearly two millennia later and he’s finding his way in a very different world than that of his past life. When he meets Eiko, an amateur musician with big dreams, the unlikely duo strikes up an even unlikelier friendship. Eiko has street smarts to help Kongming navigate this strange new world, and Kongming will use his strategic mind to help Eiko achieve stardom!\n<br><br>\n(Source: Sentai Filmworks)\n<br><br>\n<i>An advanced online screening of the first episode was held on March 31, 2022, but the weekly TV release began on April 5, 2022.</i>",
     trailer: {
       site: "youtube",
       id: "XpfQjehkwDA",
@@ -186,7 +186,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1842-HtJQ2w0taDrN.png",
     bannerImage: null,
     genres: "Drama, Sports",
-    desc: "After leaving Kaido in a promise to meet them at the Koshien tournament, Goro comes back to his home town once again in an attempt to join up with his old friends. Only this time, things aren't as easy to get back in the groove of.",
+    description: "After leaving Kaido in a promise to meet them at the Koshien tournament, Goro comes back to his home town once again in an attempt to join up with his old friends. Only this time, things aren't as easy to get back in the groove of.",
     trailer: null,
     averageScore: 80,
     duration: 25,
@@ -208,7 +208,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101291-L71WpAkZPtgm.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/n101291-fqIUvQ6apEtD.jpg",
     genres: "Comedy, Drama, Mystery, Psychological, Romance, Supernatural",
-    desc: 'There\'s a rumor about a mysterious phenomenon called "puberty syndrome." For example, Sakuta Azusagawa is a high school student who suddenly sees a bunny girl appear in front of him. The girl is actually a girl named Mai Sakurajima, who is Sakuta\'s upperclassman who is also a famous actress who has gone on hiatus from the entertainment industry. For some reason, the people around Mai cannot see her bunny-girl figure. Sakuta sets out to solve this mystery, and as he spends time with Mai, he learns her secret feelings. Other heroines who have "puberty syndrome" start to appear in front of Sakuta.<br><br>\n(Source: Anime News Network)',
+    description: 'There\'s a rumor about a mysterious phenomenon called "puberty syndrome." For example, Sakuta Azusagawa is a high school student who suddenly sees a bunny girl appear in front of him. The girl is actually a girl named Mai Sakurajima, who is Sakuta\'s upperclassman who is also a famous actress who has gone on hiatus from the entertainment industry. For some reason, the people around Mai cannot see her bunny-girl figure. Sakuta sets out to solve this mystery, and as he spends time with Mai, he learns her secret feelings. Other heroines who have "puberty syndrome" start to appear in front of Sakuta.<br><br>\n(Source: Anime News Network)',
     trailer: {
       site: "youtube",
       id: "o0TZj_d3Yfg",
@@ -234,7 +234,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx146646-RMrHipfzvfTM.jpg",
     bannerImage: null,
     genres: "Action, Sports",
-    desc: "The second season of <I>Hanma Baki</i>. <br><br>\nIn Hanma Baki’s first season, the fighter Baki — the strongest high schooler in the land — trained in a prison against fellow inmates, defeating a giant praying mantis and formidable opponents like Biscuit “Mr. Unchained” Oliva and Jun “Mr. Second” Guevaru. Now, Baki is back and gearing up to battle Pickle, a perfectly preserved prehistoric man so powerful, he once preyed on dinosaurs. If Baki can take down Pickle, his final matchup will be with his all-powerful father, Yujiro Hanma.<br><br>\n(Source: Netflix)",
+    description: "The second season of <I>Hanma Baki</i>. <br><br>\nIn Hanma Baki’s first season, the fighter Baki — the strongest high schooler in the land — trained in a prison against fellow inmates, defeating a giant praying mantis and formidable opponents like Biscuit “Mr. Unchained” Oliva and Jun “Mr. Second” Guevaru. Now, Baki is back and gearing up to battle Pickle, a perfectly preserved prehistoric man so powerful, he once preyed on dinosaurs. If Baki can take down Pickle, his final matchup will be with his all-powerful father, Yujiro Hanma.<br><br>\n(Source: Netflix)",
     trailer: {
       site: "youtube",
       id: "SDOdIjgevrk",
@@ -260,7 +260,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx133844-E32FjKZ0XxEs.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/133844-uIaUmh5aJX3M.jpg",
     genres: "Action, Adventure, Fantasy",
-    desc: "The fourth season of <i>Overlord</i>.\n<br><br>\nE-Rantel, the capital city of the newly established Sorcerer Kingdom, suffers from a dire shortage of goods. Once a prosperous city known for its trade, it now faces a crisis due to its caution—or even fear—of its king, Ainz Ooal Gown. To make amends, Ainz sends Albedo to the city as a diplomatic envoy.\n<br><br>\nMeanwhile, the cardinals of the Slane Theocracy discuss how to retaliate against Ainz after his attack crippled the Re-Estize Kingdom's army, plotting for the Baharuth Empire to take over the Sorcerer Kingdom. However, when Emperor Jircniv Rune Farlord El Nix arranges a meeting with the Theocracy's messengers at a colosseum, he is confronted by none other than Ainz himself.\n<br><br>\nWith their secret gathering now out in the open, the emperor and his guests learn that Ainz has challenged the Warrior King, the empire's greatest fighter, to a duel. With Ainz's motivations beyond his comprehension, Jircniv can do nothing but watch as humanity's future changes before his very eyes.\n<br><br>\n(Source: MAL Rewrite)",
+    description: "The fourth season of <i>Overlord</i>.\n<br><br>\nE-Rantel, the capital city of the newly established Sorcerer Kingdom, suffers from a dire shortage of goods. Once a prosperous city known for its trade, it now faces a crisis due to its caution—or even fear—of its king, Ainz Ooal Gown. To make amends, Ainz sends Albedo to the city as a diplomatic envoy.\n<br><br>\nMeanwhile, the cardinals of the Slane Theocracy discuss how to retaliate against Ainz after his attack crippled the Re-Estize Kingdom's army, plotting for the Baharuth Empire to take over the Sorcerer Kingdom. However, when Emperor Jircniv Rune Farlord El Nix arranges a meeting with the Theocracy's messengers at a colosseum, he is confronted by none other than Ainz himself.\n<br><br>\nWith their secret gathering now out in the open, the emperor and his guests learn that Ainz has challenged the Warrior King, the empire's greatest fighter, to a duel. With Ainz's motivations beyond his comprehension, Jircniv can do nothing but watch as humanity's future changes before his very eyes.\n<br><br>\n(Source: MAL Rewrite)",
     trailer: {
       site: "youtube",
       id: "tNYQjEyTO6s",
@@ -286,7 +286,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx1698-VhVaiOLkcGCp.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/n1698-YhbmezYfngCk.jpg",
     genres: "Comedy, Drama, Music, Romance, Slice of Life",
-    desc: "Shinichi Chiaki is a first class musician whose dream is to play among the elites in Europe. Coming from a distinguished family, he is an infamous perfectionist; not only is he highly critical of himself, but of others as well. The only thing stopping Chiaki from leaving for Europe is his fear of flying. As a result, he's grounded in Japan.<br><br>\nDuring his 4th year at Japan's top music university, Chiaki happens to meet Noda Megumi; or as she refers to herself, Nodame. On the surface, she seems to be an unkempt girl with no direction in life. However, when Chiaki hears Nodame play the piano for the first time, he is in awe at the kind of music she plays. To Chiaki's dismay, Nodame moves into the apartment next to his and finds out that she is head over heels in love with him.<br><br>\nNodame Cantabile tells the story of Chiaki and Nodame, as they not only learn to deal with each other, but learn lessons from one another as they strive for the top of the musical world.<br><br>\n[Written by MAL Rewrite]",
+    description: "Shinichi Chiaki is a first class musician whose dream is to play among the elites in Europe. Coming from a distinguished family, he is an infamous perfectionist; not only is he highly critical of himself, but of others as well. The only thing stopping Chiaki from leaving for Europe is his fear of flying. As a result, he's grounded in Japan.<br><br>\nDuring his 4th year at Japan's top music university, Chiaki happens to meet Noda Megumi; or as she refers to herself, Nodame. On the surface, she seems to be an unkempt girl with no direction in life. However, when Chiaki hears Nodame play the piano for the first time, he is in awe at the kind of music she plays. To Chiaki's dismay, Nodame moves into the apartment next to his and finds out that she is head over heels in love with him.<br><br>\nNodame Cantabile tells the story of Chiaki and Nodame, as they not only learn to deal with each other, but learn lessons from one another as they strive for the top of the musical world.<br><br>\n[Written by MAL Rewrite]",
     trailer: null,
     averageScore: 80,
     duration: 22,
@@ -308,7 +308,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx11843-KK3X2ccAlUwI.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/11843-2GxMdvjHLn6v.jpg",
     genres: "Comedy, Slice of Life",
-    desc: "Tadakuni, Hidenori, and Yoshitake are students at the all-boys academy, Sanada North High School. This is a tale about just that—their daily lives as students. Winning the basketball tournament? Finding true love? You won't find any of that here. Whether it's sparking random arguments while hanging out with friends, meeting that one weird co-worker at a part-time job, or even letting imaginations run wild on a windy afternoon, we've all experienced the show's ordinary but true-to-life themes at one point or another. <br><br>\r\n(Source: NIS America) ",
+    description: "Tadakuni, Hidenori, and Yoshitake are students at the all-boys academy, Sanada North High School. This is a tale about just that—their daily lives as students. Winning the basketball tournament? Finding true love? You won't find any of that here. Whether it's sparking random arguments while hanging out with friends, meeting that one weird co-worker at a part-time job, or even letting imaginations run wild on a windy afternoon, we've all experienced the show's ordinary but true-to-life themes at one point or another. <br><br>\r\n(Source: NIS America) ",
     trailer: {
       site: "youtube",
       id: "BsQj0RYzW98",
@@ -334,7 +334,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx116338-jbuJnLkPMcm7.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/116338-LexsWZ3dXsod.jpg",
     genres: "Comedy, Fantasy, Supernatural",
-    desc: "The second season of <i>Mairimashita! Iruma-kun</i>.<br>\n<br>\nSuzuki Iruma, human and deeply non-aggressive, one day becomes the grandson of the great demon Sullivan. Doted on beyond belief, Iruma starts school where \"Grandpa\" serves as the chair... and finds, to his surprise, that he enjoys life there with Asmodeus, Clara, and the rest of his demon classmates. But just when Iruma thought he'd fitted in, there's more trouble ahead! A ring begins to talk, and Iruma... goes bad?! Iruma's chaotic, demonic life at school continues!<br>\n<br>\n(Source: NHK)",
+    description: "The second season of <i>Mairimashita! Iruma-kun</i>.<br>\n<br>\nSuzuki Iruma, human and deeply non-aggressive, one day becomes the grandson of the great demon Sullivan. Doted on beyond belief, Iruma starts school where \"Grandpa\" serves as the chair... and finds, to his surprise, that he enjoys life there with Asmodeus, Clara, and the rest of his demon classmates. But just when Iruma thought he'd fitted in, there's more trouble ahead! A ring begins to talk, and Iruma... goes bad?! Iruma's chaotic, demonic life at school continues!<br>\n<br>\n(Source: NHK)",
     trailer: {
       site: "youtube",
       id: "NxqfMRZfVTA",
@@ -360,7 +360,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx18195-SXGTMYGxwvxI.png",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/n18195-RnrDm1J9XO59.jpg",
     genres: "Drama, Mystery, Supernatural",
-    desc: "Riki Naoe and his teammates have finally formed a complete baseball team for the Little Busters. When the Little Busters reunite, there's a strange sense of déjà vu, as the personal mysteries and idiosyncrasies that have permeated the game coalesce into something unexpected. As the team members fall into their roles, the pieces of the puzzle begin to fall into place. And as Riki learns the secrets behind his narcolepsy, a stunning truth about this world will be revealed, one that will change everything. Will the game continue into extra innings, or will it be called before the final player goes to bat? Riki made the team and his teammates came, but the next pitch may throw everyone in LITTLE BUSTERS! REFRAIN!<br><br>(Source: Sentai Filmworks)",
+    description: "Riki Naoe and his teammates have finally formed a complete baseball team for the Little Busters. When the Little Busters reunite, there's a strange sense of déjà vu, as the personal mysteries and idiosyncrasies that have permeated the game coalesce into something unexpected. As the team members fall into their roles, the pieces of the puzzle begin to fall into place. And as Riki learns the secrets behind his narcolepsy, a stunning truth about this world will be revealed, one that will change everything. Will the game continue into extra innings, or will it be called before the final player goes to bat? Riki made the team and his teammates came, but the next pitch may throw everyone in LITTLE BUSTERS! REFRAIN!<br><br>(Source: Sentai Filmworks)",
     trailer: {
       site: "youtube",
       id: "S52dEJd7RFY",
@@ -386,7 +386,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx128893-l0R0GFHplDKW.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/128893-pAA7PjY8l7dy.jpg",
     genres: "Action, Adventure, Mystery, Supernatural",
-    desc: "The Edo period is nearing its end. Gabimaru, a shinobi formerly known as the strongest in Iwagakure who is now a death row convict, is told that he will be acquitted and set free if he can bring back the Elixir of Life from an island that is rumored to be the Buddhist pure land Sukhavati. In hopes of reuniting with his beloved wife, Gabimaru heads to the island along with the executioner Yamada Asaemon Sagiri. Upon arriving there, they encounter other death row convicts in search of the Elixir of Life... as well as a host of unknown creatures, eerie manmade statues, and the hermits who rule the island. Can Gabimaru find the Elixir of Life on this mysterious island and make it back home alive?<br>\n<br>\n(Source: Crunchyroll)",
+    description: "The Edo period is nearing its end. Gabimaru, a shinobi formerly known as the strongest in Iwagakure who is now a death row convict, is told that he will be acquitted and set free if he can bring back the Elixir of Life from an island that is rumored to be the Buddhist pure land Sukhavati. In hopes of reuniting with his beloved wife, Gabimaru heads to the island along with the executioner Yamada Asaemon Sagiri. Upon arriving there, they encounter other death row convicts in search of the Elixir of Life... as well as a host of unknown creatures, eerie manmade statues, and the hermits who rule the island. Can Gabimaru find the Elixir of Life on this mysterious island and make it back home alive?<br>\n<br>\n(Source: Crunchyroll)",
     trailer: {
       site: "youtube",
       id: "8BIaDDN-r3o",
@@ -412,7 +412,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx124032-li8JjJdJvDVb.png",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/124032-jnU1bPCnKUF2.jpg",
     genres: "Action, Drama, Fantasy, Sci-Fi",
-    desc: "The sequel to <i>Legend of the Galactic Heroes: Die Neue These Second</i>.",
+    description: "The sequel to <i>Legend of the Galactic Heroes: Die Neue These Second</i>.",
     trailer: {
       site: "youtube",
       id: "TThgTlcYtPU",
@@ -438,7 +438,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5040-OpWkR6shhDv1.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/5040-Vpk8PmvE5o27.png",
     genres: "Psychological, Sports",
-    desc: "The story begins when Hiromichi Kojima, the star batter of the fictional Lycaons in Japan's Pacific League, heads to the southern Japanese island of Okinawa to train and bring himself out of a slump. There, he meets Toua Tokuchi, a 134-kmph (83 miles per hour) pitcher and the undisputed king of a gambling form of baseball called \"One Out.\" At Kojima's urging, Tokuchi signs up with the Lycaons under an unusual contract: he gets 5,000,000 yen (about US$46,000) for every out he pitches, but loses 50,000,000 yen (US$460,000) for every point he gives up. <br><br>\n(Source: Anime News Network)",
+    description: "The story begins when Hiromichi Kojima, the star batter of the fictional Lycaons in Japan's Pacific League, heads to the southern Japanese island of Okinawa to train and bring himself out of a slump. There, he meets Toua Tokuchi, a 134-kmph (83 miles per hour) pitcher and the undisputed king of a gambling form of baseball called \"One Out.\" At Kojima's urging, Tokuchi signs up with the Lycaons under an unusual contract: he gets 5,000,000 yen (about US$46,000) for every out he pitches, but loses 50,000,000 yen (US$460,000) for every point he gives up. <br><br>\n(Source: Anime News Network)",
     trailer: null,
     averageScore: 80,
     duration: 23,
@@ -460,7 +460,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5420-hOjyV2QC1yIG.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/5420-1e7DdF6nWMuk.jpg",
     genres: "Drama, Fantasy",
-    desc: "In the land of Ryoza, the neighboring provinces of Shin-Ou and Tai-Kou have been at peace. Queen Shinou is the ruler of Ryoza and her greatest general, Grand Duke Taikou, defends the kingdom with his army of powerful war-lizards known as the \"Touda.\" Although the two regions have enjoyed a long-standing alliance, mounting tensions threaten to spark a fierce civil war.<br>\n<br>\nWithin Ake, a village in Tai-Kou tasked with raising the Grand Duke's army, lives Erin, a bright girl who spends her days watching the work of her mother Soyon, the village's head Touda doctor. But while under Soyon's care, a disastrous incident befalls the Grand Duke's strongest Touda, and the peace that Erin and her mother had been enjoying vanishes as Soyon is punished severely. In a desperate attempt to save her mother, Erin ends up falling in a river and is swept towards Shin-Ou.<br>\n<br>\nUnable to return home, Erin must learn to lead a new life with completely different people, all while hunting for the truth of both beasts and humanity itself, with tensions between the two regions constantly escalating.<br>\n<br>\n(Source: MAL Rewrite)",
+    description: "In the land of Ryoza, the neighboring provinces of Shin-Ou and Tai-Kou have been at peace. Queen Shinou is the ruler of Ryoza and her greatest general, Grand Duke Taikou, defends the kingdom with his army of powerful war-lizards known as the \"Touda.\" Although the two regions have enjoyed a long-standing alliance, mounting tensions threaten to spark a fierce civil war.<br>\n<br>\nWithin Ake, a village in Tai-Kou tasked with raising the Grand Duke's army, lives Erin, a bright girl who spends her days watching the work of her mother Soyon, the village's head Touda doctor. But while under Soyon's care, a disastrous incident befalls the Grand Duke's strongest Touda, and the peace that Erin and her mother had been enjoying vanishes as Soyon is punished severely. In a desperate attempt to save her mother, Erin ends up falling in a river and is swept towards Shin-Ou.<br>\n<br>\nUnable to return home, Erin must learn to lead a new life with completely different people, all while hunting for the truth of both beasts and humanity itself, with tensions between the two regions constantly escalating.<br>\n<br>\n(Source: MAL Rewrite)",
     trailer: null,
     averageScore: 80,
     duration: 25,
@@ -482,7 +482,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx20931-bktYqOcxPERi.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20931-xDhiTPZmtS3u.jpg",
     genres: "Drama, Mystery, Psychological, Supernatural, Thriller",
-    desc: "When two people die at the same time, they’re sent to a place that’s neither heaven nor hell—a lavish bar between worlds where the stakes are high and the rules are simple: if you win you live again, if you die… you’re gone for good.<br>\n<br>\nDecim is the bartender charged with serving the souls who enter Quindecim. He may make a mean cocktail, but his true profession is to play the role of arbiter—a judge who determines whether or not a soul is worthy of reincarnation. To aid in his judgment, the bar’s patrons are forced to play simple games laced with sadistic twists designed to bring their true natures to light. To Decim, judgment has always been black and white—that is—until he meets a mysterious young woman whose fate seems impossible to decide. His indecision shakes the very foundation of the games and raises the biggest question of all: Who is fit to judge the dead?<br>\n<br>\n(Source: Funimation)",
+    description: "When two people die at the same time, they’re sent to a place that’s neither heaven nor hell—a lavish bar between worlds where the stakes are high and the rules are simple: if you win you live again, if you die… you’re gone for good.<br>\n<br>\nDecim is the bartender charged with serving the souls who enter Quindecim. He may make a mean cocktail, but his true profession is to play the role of arbiter—a judge who determines whether or not a soul is worthy of reincarnation. To aid in his judgment, the bar’s patrons are forced to play simple games laced with sadistic twists designed to bring their true natures to light. To Decim, judgment has always been black and white—that is—until he meets a mysterious young woman whose fate seems impossible to decide. His indecision shakes the very foundation of the games and raises the biggest question of all: Who is fit to judge the dead?<br>\n<br>\n(Source: Funimation)",
     trailer: {
       site: "youtube",
       id: "n9lr8jqI-24",
@@ -508,7 +508,7 @@ export const animedataDefault = [
     image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx19603-pc0lrFinBpTg.jpg",
     bannerImage: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/19603.jpg",
     genres: "Action, Fantasy, Supernatural",
-    desc: 'Fuyuki City - a city surrounded by the sea and mountains becomes the setting for an ancient ritual. Seven masters are given control of heroic spirits in order to realize the mythical Holy Grail, which is said to grant its owner any wish. These heroic spirits or servants represent legendary heroes of various classes: "Saber," "Lancer," "Archer," "Rider," "Caster," "Assassin," and "Berserker." Each master will enter into a contract with their chosen servant and battle the others to the death until only one pair remains... This is the "Holy Grail War."<br>\n<br>\nThe young and capable mage, Rin Tohsaka, prepares for her long-awaited Fifth Holy Grail War to begin... With her servant Archer, Rin enters the Holy Grail War as the sole heir to the prestigious Tohsaka family after her father\'s death. But when Shirou Emiya, a boy from Rin\'s school, unwittingly becomes a Master and is fatally wounded in battle, she has no choice but to save him. With Shirou and his servant Saber, Rin sets out to strike down the conspiracies surrounding the Holy Grail War. Will the Holy Grail bless Rin and Shirou\'s path toward victory or will they be cursed with defeat?<br>\n<br>\n(Source: Aniplex of America)<br>\n<br>\n<i>Notes:<br>\n- Includes Prologue.<br>\n- The first, second and last episodes aired with a runtime of ~48 minutes as opposed to the standard 24 minute long episode.\n</i>',
+    description: 'Fuyuki City - a city surrounded by the sea and mountains becomes the setting for an ancient ritual. Seven masters are given control of heroic spirits in order to realize the mythical Holy Grail, which is said to grant its owner any wish. These heroic spirits or servants represent legendary heroes of various classes: "Saber," "Lancer," "Archer," "Rider," "Caster," "Assassin," and "Berserker." Each master will enter into a contract with their chosen servant and battle the others to the death until only one pair remains... This is the "Holy Grail War."<br>\n<br>\nThe young and capable mage, Rin Tohsaka, prepares for her long-awaited Fifth Holy Grail War to begin... With her servant Archer, Rin enters the Holy Grail War as the sole heir to the prestigious Tohsaka family after her father\'s death. But when Shirou Emiya, a boy from Rin\'s school, unwittingly becomes a Master and is fatally wounded in battle, she has no choice but to save him. With Shirou and his servant Saber, Rin sets out to strike down the conspiracies surrounding the Holy Grail War. Will the Holy Grail bless Rin and Shirou\'s path toward victory or will they be cursed with defeat?<br>\n<br>\n(Source: Aniplex of America)<br>\n<br>\n<i>Notes:<br>\n- Includes Prologue.<br>\n- The first, second and last episodes aired with a runtime of ~48 minutes as opposed to the standard 24 minute long episode.\n</i>',
     trailer: {
       site: "youtube",
       id: "61RuoLIlCUM",
@@ -529,123 +529,30 @@ export const animedataDefault = [
 ];
 
 //Spin Wheel Props
-export const props = {
-  overlayImage: "../img/spinarrow.png",
+const overlayImg = new Image();
+overlayImg.src = "../img/spinarrow.png"; 
+
+export const WHEEL_PROPERTIES = {
+  overlayImage: overlayImg,
   lineWidth: 3,
   borderColor: "#323b46",
   lineColor: "#323b46",
-  borderWidth: 5,
+  borderWidth: 3,
   itemLabelColors: ["#e9e9e9"],
+  itemLabelFontSizeMax: 10,
+  itemLabelStrokeWidth: 1,
+  itemLabelStrokeColor:"#323b46",
+    borderColor: "#323b46",
   itemBackgroundColors: ["#000000ab"],
-  items: [
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[0].image,
-      label: animedataDefault[0].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[1].image,
-      label: animedataDefault[1].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[2].image,
-      label: animedataDefault[2].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[3].image,
-      label: animedataDefault[3].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[4].image,
-      label: animedataDefault[4].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[5].image,
-      label: animedataDefault[5].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[6].image,
-      label: animedataDefault[6].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[7].image,
-      label: animedataDefault[7].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[8].image,
-      label: animedataDefault[8].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[9].image,
-      label: animedataDefault[9].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[10].image,
-      label: animedataDefault[10].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[11].image,
-      label: animedataDefault[11].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[12].image,
-      label: animedataDefault[12].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[13].image,
-      label: animedataDefault[13].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[14].image,
-      label: animedataDefault[14].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[15].image,
-      label: animedataDefault[15].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[16].image,
-      label: animedataDefault[16].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[17].image,
-      label: animedataDefault[17].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[18].image,
-      label: animedataDefault[18].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[19].image,
-      label: animedataDefault[19].name,
-    },
-    {
-      imageOpacity: 0.5,
-      image: animedataDefault[20].image,
-      label: animedataDefault[20].name,
-    },
-  ],
+  items: DEFAULT_ANIME_DATA.map((item, idx) => ({
+    label: item.name,
+    image: item.image,
+    value: idx,
+    imageOpacity: 0.5,
+  })),
 };
-export const animeArrayDefault = {
+
+export const DEFAULT_ANIME_ITEM = {
   name: " ",
   nameEng: " ",
   siteUrl: " ",
@@ -653,7 +560,7 @@ export const animeArrayDefault = {
   image: " ",
   bannerImage: " ",
   genres: " ",
-  desc: " ",
+  description: " ",
   trailer: " ",
   averageScore: " ",
   duration: " ",

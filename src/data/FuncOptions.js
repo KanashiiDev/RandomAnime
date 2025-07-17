@@ -6,12 +6,23 @@ export const ytopts = {
   },
 };
 //Random Number
-export const randomizeNumber = (number) => Math.floor(Math.random() * number);
+export const getRandomNumber = (number) => Math.floor(Math.random() * number);
+
+//Load Image
+export async function loadImage(url) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = url;
+  });
+}
 
 //Random Different Numbers
-export async function randomizeDiffNumbers(number, times) {
+export async function getUniqueRandomNumbers(number, times) {
   let numbers = [];
-  while (numbers.length < times) {
+  const count = Math.min(number, times); 
+  while (numbers.length < count) {
     let randomNumber = Math.floor(Math.random() * number);
     if (!numbers.includes(randomNumber)) {
       numbers.push(randomNumber);
@@ -19,21 +30,24 @@ export async function randomizeDiffNumbers(number, times) {
   }
   return numbers;
 }
+
 //Fix Anime Tags that contains apostrophe(')
-export function tagFix(str, type) {
+export function formatTag(str, type) {
+  if (typeof str !== "string") return "";
   if (type === "str") {
-    return String(str).replace(/'/g, " ");
+    return str.replace(/'/g, " ");
   }
   if (type === "url") {
-    return String(str).replace(/'/g, "%27");
+    return encodeURIComponent(str);
   }
+  return str;
 }
 
-//Truncate Long Label
-export const truncate = (input,value) => (input.length > value ? `${input.substring(0, value)}...` : input);
+//truncateText Long Label
+export const truncateText = (input, value) => (input.length > value ? `${input.substring(0, value)}...` : input);
 
 //Apollo Client Query Default Options
-export const QuerydefaultOptions = {
+export const DEFAULT_QUERY_OPTIONS = {
   watchQuery: {
     fetchPolicy: "no-cache",
     errorPolicy: "ignore",
@@ -43,3 +57,15 @@ export const QuerydefaultOptions = {
     errorPolicy: "all",
   },
 };
+
+export function cloneWheelPropsPreservingImages(baseProps) {
+  const copy = JSON.parse(JSON.stringify(baseProps));
+  if (Array.isArray(baseProps.items) && Array.isArray(copy.items)) {
+    for (let i = 0; i < baseProps.items.length; i++) {
+      copy.items[i].image = baseProps.items[i].image;
+    }
+  }
+  copy.overlayImage = baseProps.overlayImage;
+
+  return copy;
+}

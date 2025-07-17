@@ -15,7 +15,7 @@ import {
 import Result from "./Result.jsx";
 import { React, useState, useEffect } from "react";
 import MarkdownView from "react-showdown";
-import { tagFix } from "../data/FuncOptions.js";
+import { formatTag } from "../data/FuncOptions.js";
 export default function AnimeDay() {
   const [animedata, setanimedata] = useState();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -41,9 +41,9 @@ export default function AnimeDay() {
               .map(
                 (node) =>
                   "<div class='tag'><a href='https://anilist.co/search/anime?genres=" +
-                  tagFix(node.name, "url") +
+                  formatTag(node.name, "url") +
                   "'><div class='tag-name'>" +
-                  tagFix(node.name, "str") +
+                  formatTag(node.name, "str") +
                   "</div></a>" +
                   "<div class='tag-percent'> (" +
                   node.rank +
@@ -53,7 +53,7 @@ export default function AnimeDay() {
               .split(",")
               .join("")
           : " ";
-        Array[0].desc = result.description;
+        Array[0].description = result.description;
         Array[0].siteUrl = result.siteUrl;
         Array[0].idMal = result.idMal;
         Array[0].trailer = result.trailer;
@@ -96,7 +96,7 @@ export default function AnimeDay() {
             {animedata && animedata[0].name ? animedata[0].name : ""}
           </Heading>
           <Box color='#dadada' p='10px' height='60px' className='desc'>
-            {<MarkdownView markdown={animedata && animedata[0].desc ? animedata[0].desc : ""} />}
+            {<MarkdownView markdown={animedata && animedata[0].description ? animedata[0].description : ""} />}
           </Box>
         </Flex>
         <Button className='dayAnimeBtn' mb='10px' mt='auto' mx='10px' onClick={onOpen}>
@@ -105,7 +105,7 @@ export default function AnimeDay() {
       </Flex>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent className='spin-filter-modal' maxW='550px'>
+        <ModalContent className='result-modal'>
           <ModalHeader></ModalHeader>
           <ModalCloseButton />
           <ModalBody>
@@ -116,7 +116,6 @@ export default function AnimeDay() {
               {animedata}
             </Result>
           </ModalBody>
-          <ModalFooter></ModalFooter>
         </ModalContent>
       </Modal>
     </Flex>

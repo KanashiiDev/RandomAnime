@@ -1,4 +1,4 @@
-export const genres = [
+export const GENRE_OPTIONS = [
   { value: "Action", label: "Action" },
   { value: "Adventure", label: "Adventure" },
   { value: "Comedy", label: "Comedy" },
@@ -7,7 +7,6 @@ export const genres = [
   { value: "Fantasy", label: "Fantasy" },
   { value: "Game", label: "Game" },
   { value: "Harem", label: "Harem" },
-  { value: "Hentai", label: "Hentai" },
   { value: "Historical", label: "Historical" },
   { value: "Horror", label: "Horror" },
   { value: "Isekai", label: "Isekai" },
@@ -31,7 +30,7 @@ export const genres = [
   { value: "Yaoi", label: "Yaoi" },
   { value: "Yuri", label: "Yuri" },
 ];
-export const tags = [
+export const TAG_OPTIONS = [
   { value: "Age Gap", label: "Age Gap" },
   { value: "Aliens", label: "Aliens" },
   { value: "Amnesia", label: "Amnesia" },
