@@ -1,23 +1,45 @@
-# RandomAnime
+#  RandomAnime
 
-Made with react using Anilist API.<br><br>
-<a href="public/img/demo.jpg">
-  <img src="public/img/demo.jpg" width="800px" />
-</a>
+**Mini React project made with Anilist API — see what anime fate has for you!**
 
-<h1>Features</h1>
-<b>Anime of the Day</b><br>
-Specially selected daily anime recommendations!<br>
-<i>You can change the daily recommended anime by editing the <b>../src/data/dailyItems.js</b> file. (Anime Ids from Anilist)</i><br><br>
-<b>Filter</b><br>
-Choose what genres you like, or don't like, and only those anime will appear.<br>
-You can also filter by episode, score and year.<br><br>
-<b>Spin Wheel</b><br>
-Filter Anime and spin the wheel for random anime!<br><br>
-<b>Watch List</b><br>
-If you see something you might want to check out later, save it to a watch list and come back when you’re ready.<br><br>
-<h1>Setup</h1>
-1 - Open "config.json" and fill required values.<br>
-2 - Open a command prompt and do the following command in the project directory: <br>
-<b><i>npm run install</i></b><br>
-<b><i>npm run dev</i></b>
+<p align="center">
+  <a href="public/img/demo.jpg">
+    <img src="public/img/demo.jpg" width="800px" alt="RandomAnime Demo"/>
+  </a>
+</p>
+
+---
+
+## 🌟 Features
+
+### Anime of the Day
+
+Daily handpicked anime recommendations!
+*You can customize the daily anime by editing* `../src/data/dailyItems.js` *(Anime IDs from Anilist).*
+
+### Filter
+
+Pick your favorite genres, exclude the ones you dislike, and the list will adjust automatically.
+You can also filter by episode count, score, and release year.
+
+### Spin Wheel
+
+Filter your anime and spin the wheel for a **random pick** — perfect for indecisive moods! 🎡
+
+### Watch List
+
+See something interesting? Save it for later and return when you’re ready.
+
+---
+
+## ⚙️ Setup
+
+1. Open `config.json` and fill in the required values.
+2. Open a terminal in the project directory and run:
+
+```bash
+npm run install
+npm run dev
+```
+
+3. Open your browser at `http://localhost:3000` and enjoy! 🚀
